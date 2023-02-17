@@ -1,0 +1,18 @@
+.glass-button {
+    display: inline-block;
+    padding: 24px 32px;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgb(39, 56, 115);
+    border: 1px solid rgb(39, 86, 115);
+    backdrop-filter: blur(30px);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.glass-button:hover {
+    background-color: rgba(39, 56, 115, 0.7);
+}

@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Dashboard from "./components/subsides/Dashboard";
+import Matches from "./components/subsides/Matches";
+import Referees from "./components/subsides/Referees";
+import Statistics from "./components/subsides/Statistics";
+import Teams from "./components/subsides/Teams";
+import Settings from "./components/subsides/Settings";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <BrowserRouter>
+            <Sidebar>
+                <Routes>
+                    <Route path="/" element={<Dashboard></Dashboard>}></Route>
+                    <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+                    <Route path="/teams" element={<Teams></Teams>}></Route>
+                    <Route path="/referees" element={<Referees></Referees>}></Route>
+                    <Route path="/statistics" element={<Statistics></Statistics>}></Route>
+                    <Route path="/matches" element={<Matches></Matches>}></Route>
+                    <Route path="/settings" element={<Settings></Settings>}></Route>
+                </Routes>
+            </Sidebar>
+
+        </BrowserRouter>
+    );
 }
 
 export default App;
